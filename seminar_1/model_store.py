@@ -1,7 +1,7 @@
 """Model Store module."""
 from in_memory_model import IModelChangeObserver, ImodelChanger
-from model_elements import Camera, Flash, PoligonalModel, Scene
-from service import Color, Texture
+from model_elements import Camera,  PoligonalModel, Scene
+from service import Texture
 
 
 class ModelStore(ImodelChanger):
@@ -9,9 +9,11 @@ class ModelStore(ImodelChanger):
 
     def __init__(self, change_observers: list[IModelChangeObserver]) -> None:
         self.models = [PoligonalModel(textures=Texture()), ]
-        self.flashes = [Flash(power=3.0, color=Color()), ]
-        self.scenes = [Scene(id_=1, models=self.models, flashes=self.flashes)]
+        self.flashes = []
         self.cameras = [Camera(), ]
+        self.scenes = [Scene(id_=1, models=self.models,
+                             flashes=self.flashes, cameras=self.cameras)]
+
         self.change_observers = change_observers
 
     def get_scena(self, id_) -> Scene | None:
