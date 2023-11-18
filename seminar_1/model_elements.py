@@ -62,17 +62,19 @@ class Scene():
     """Class Scene."""
 
     def __init__(
-            self, id_: int, models: list[PoligonalModel], flashes: list[Flash]
+            self, id_: int, models: list[PoligonalModel], flashes: list[Flash],
+            cameras: list[Camera]
     ) -> None:
         self.id = id_
         if len(models) > 0:
             self.models = models
         else:
             raise RuntimeError('There should be one model.')
-        if len(flashes) > 0:
-            self.flashes = flashes
+        self.flashes = flashes
+        if len(cameras) > 0:
+            self.cameras = cameras
         else:
-            raise RuntimeError('There should be one flash.')
+            raise RuntimeError('There should be one camera.')
 
     def method_1(self, models: list[PoligonalModel]) -> list:
         """Return models list.
