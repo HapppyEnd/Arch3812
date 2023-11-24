@@ -12,7 +12,7 @@ class Quadrangle:
 class Rectangle(Quadrangle):
     """Class Rectangle."""
 
-    def __init__(self, width, height) -> None:
+    def __init__(self, width: int, height: int) -> None:
         self.width = width
         self.height = height
 
@@ -23,7 +23,7 @@ class Rectangle(Quadrangle):
 class Square(Quadrangle):
     """Class Square."""
 
-    def __init__(self, length) -> None:
+    def __init__(self, length: int) -> None:
         self.length = length
 
     def area(self) -> int:
