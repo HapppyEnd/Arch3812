@@ -2,36 +2,29 @@
 """
 
 
-class Rectangle:
+class Quadrangle:
+    """Class Quadrangle."""
+
+    def area(self) -> None:
+        """Calculate area."""
+
+
+class Rectangle(Quadrangle):
     """Class Rectangle."""
 
-    def __init__(self) -> None:
-        self.width = 0
-        self.height = 0
-
-    def set_width(self, width: int) -> None:
-        """Set width."""
+    def __init__(self, width, height) -> None:
         self.width = width
-
-    def set_height(self, height: int) -> None:
-        """Set height."""
         self.height = height
 
     def area(self) -> int:
-        """Return area."""
         return self.width * self.height
 
 
-class Square(Rectangle):
+class Square(Quadrangle):
     """Class Square."""
 
-    def set_width(self, width) -> None:
-        self.width = width
-        self.height = width
-
-    def set_height(self, height) -> None:
-        self.width = height
-        self.height = height
+    def __init__(self, length) -> None:
+        self.length = length
 
     def area(self) -> int:
-        return self.width * self.height
+        return self.length * self.length
