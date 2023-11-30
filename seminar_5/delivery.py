@@ -15,6 +15,6 @@ class Delivery():
         """Order delivered."""
         self.status = True
 
-    def change_date(self, date) -> None:
+    def change_date(self, date: datetime) -> None:
         """Change delivery date."""
         self.date = date

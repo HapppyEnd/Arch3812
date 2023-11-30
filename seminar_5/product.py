@@ -16,7 +16,7 @@ class Product():
         """Get product id."""
         return self.product_id
 
-    def set_price(self, price) -> None:
+    def set_price(self, price: float) -> None:
         """Set product price."""
         self.price = price
 
